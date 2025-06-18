@@ -1,16 +1,5 @@
 # 🎓 EduStack – Modern LMS Platform
 
-<TechBadge text="Next.js 15" />
-<TechBadge text="React 19" />
-<TechBadge text="TypeScript" />
-<TechBadge text="Prisma" />
-<TechBadge text="PostgreSQL" />
-<TechBadge text="Tailwind CSS" />
-<TechBadge text="shadcn/ui" />
-<TechBadge text="Vercel" />
-
----
-
 **EduStack** is a full-featured, production-ready Learning Management System built with the latest modern web technologies. This project was developed while following Jan Marshal’s comprehensive LMS fullstack course and serves as a blueprint for real-world application architecture.
 
 ---
@@ -40,4 +29,3 @@
 - `BetterAuth` or `Arcjet` (for authentication)
 - `Vercel` (for hosting)
 
----
