@@ -28,6 +28,12 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           EduStack
         </Link>
         {children}
+
+        <div className="text-balance text-xs text-muted-foreground text-center font-medium">
+          By clicking coninue you agree to our{' '}
+          <span className="hover:underline">Terms and Service</span> and{' '}
+          <span className="hover:underline">Privacy Policy</span>
+        </div>
       </div>
     </div>
   );
