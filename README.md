@@ -26,6 +26,6 @@
 - `TypeScript`
 - `Prisma` + `PostgreSQL`
 - `shadcn/ui` + `Tailwind CSS`
-- `BetterAuth` or `Arcjet` (for authentication)
+- `BetterAuth` (for authentication)
 - `Vercel` (for hosting)
 
