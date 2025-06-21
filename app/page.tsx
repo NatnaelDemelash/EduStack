@@ -4,6 +4,7 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { Button } from '@/components/ui/button';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export default function Home() {
   const router = useRouter();
@@ -15,6 +16,7 @@ export default function Home() {
       fetchOptions: {
         onSuccess: () => {
           router.push('/');
+          toast.success('Signed Out Successfully');
         },
       },
     });
