@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import logo from '@/public/logo.png';
 import { ModeToggle } from '@/components/mode-toggle';
+import { authClient } from '@/lib/auth-client';
+import { buttonVariants } from '@/components/ui/button';
+import { UserDropdown } from './UserDropdown';
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -11,6 +16,8 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
+  const { data: session, isPending } = authClient.useSession();
+
   return (
     <header className="w-full sticky top-0 z-50 border-b bg-background/95 backdrop-blur-[backdrop-filter]:bg-background/60 px-8 py-3">
       <div className="min-h-16 flex items-center gap-x-6  container mx-auto px-4 md:px-6 lg:px-8">
@@ -33,7 +40,31 @@ export default function Navbar() {
             ))}
           </div>
 
-          <ModeToggle />
+          <div className="flex space-x-4 items-center">
+            <ModeToggle />
+
+            <div className="flex space-x-4">
+              {isPending ? null : session ? (
+                <UserDropdown
+                  name={session.user.name}
+                  email={session.user.email}
+                  image={session.user.image || ''}
+                />
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className={buttonVariants({ variant: 'secondary' })}
+                  >
+                    Login
+                  </Link>
+                  <Link href="/login" className={buttonVariants()}>
+                    Get Started
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
         </nav>
       </div>
     </header>

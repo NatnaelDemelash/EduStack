@@ -2,18 +2,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { authClient } from '@/lib/auth-client';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
-import { toast } from 'sonner';
 
 interface featureProps {
   title: string;
@@ -49,21 +40,6 @@ const features: featureProps[] = [
 ];
 
 export default function Home() {
-  // const router = useRouter();
-
-  // const {data: session} = authClient.useSession();
-
-  // async function signOut () {
-  //   await authClient.signOut({
-  //     fetchOptions: {
-  //       onSuccess: () => {
-  //         router.push('/')
-  //         toast.success('Signed Out Successfully!')
-  //       }
-  //     }
-  //   })
-  // }
-
   return (
     <>
       <section className="relative py-20">
